@@ -1,0 +1,24 @@
+{
+  "home": {
+    "eyebrow": "In the Emperor's name",
+    "title": "Warhammer Shop",
+    "subtitle": "Miniatures, paints, books and accessories for Warhammer 40,000 and Age of Sigmar. From your first kit to a tournament-grade army.",
+    "ctaCatalog": "Browse catalog",
+    "ctaAbout": "About us"
+  },
+  "nav": {
+    "catalog": "Catalog",
+    "factions": "Factions",
+    "about": "About",
+    "cart": "Cart",
+    "account": "Account",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "search": "Search"
+  }
+}
