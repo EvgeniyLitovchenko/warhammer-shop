@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background-color: theme('colors.ash');
+    color: theme('colors.bone');
+  }
+
+  ::selection {
+    background-color: theme('colors.blood');
+    color: theme('colors.bone');
+  }
+}
