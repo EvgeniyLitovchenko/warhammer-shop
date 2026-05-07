@@ -33,3 +33,4 @@ tsconfig.tsbuildinfo
 !.vscode/extensions.json
 
 .claude/
+node_modules
