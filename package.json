@@ -19,6 +19,7 @@
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
     "db:seed": "tsx prisma/seed.ts",
+    "db:search-setup": "prisma db execute --file prisma/sql/search-setup.sql --schema prisma/schema.prisma",
     "postinstall": "prisma generate"
   },
   "dependencies": {

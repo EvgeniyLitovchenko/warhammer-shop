@@ -153,8 +153,6 @@ model Product {
   orderItems  OrderItem[]
   wishlistItems WishlistItem[]
 
-  searchVector Unsupported("tsvector")?
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

@@ -102,6 +102,15 @@
       }
     }
   },
+  "search": {
+    "eyebrow": "Find",
+    "title": "Search",
+    "placeholder": "What are you looking for?",
+    "queryFor": "Query «{q}»",
+    "count": "{n, plural, =0 {nothing found} one {# result} other {# results}}",
+    "noResults": "Nothing found for «{q}». Try rephrasing.",
+    "typeToSearch": "Type at least 2 characters"
+  },
   "common": {
     "loading": "Loading…",
     "error": "Something went wrong",
