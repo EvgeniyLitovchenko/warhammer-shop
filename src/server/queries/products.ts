@@ -1,5 +1,6 @@
 import type { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/db';
+import type { CatalogFilterState } from '@/lib/filters';
 import { PAGE_SIZE, type SortKey } from '@/lib/pagination';
 
 export type ProductListItem = Prisma.ProductGetPayload<{
@@ -32,14 +33,46 @@ const orderByFor = (sort: SortKey): Prisma.ProductOrderByWithRelationInput => {
   }
 };
 
+function buildWhere(filters: CatalogFilterState): Prisma.ProductWhereInput {
+  const where: Prisma.ProductWhereInput = { status: 'ACTIVE' };
+
+  if (filters.factions.length || filters.system) {
+    where.faction = {
+      ...(filters.factions.length ? { slug: { in: filters.factions } } : {}),
+      ...(filters.system ? { system: filters.system } : {}),
+    };
+  }
+
+  if (filters.category) {
+    where.category = {
+      OR: [{ slug: filters.category }, { parent: { slug: filters.category } }],
+    };
+  }
+
+  if (filters.priceMin !== null || filters.priceMax !== null) {
+    const range: Prisma.IntFilter = {};
+    if (filters.priceMin !== null) range.gte = filters.priceMin * 100;
+    if (filters.priceMax !== null) range.lte = filters.priceMax * 100;
+    where.priceUah = range;
+  }
+
+  if (filters.inStock) {
+    where.inventory = { stock: { gt: 0 } };
+  }
+
+  return where;
+}
+
 export async function listProducts({
   page,
   sort,
+  filters,
 }: {
   page: number;
   sort: SortKey;
+  filters: CatalogFilterState;
 }): Promise<{ items: ProductListItem[]; total: number; pageSize: number }> {
-  const where: Prisma.ProductWhereInput = { status: 'ACTIVE' };
+  const where = buildWhere(filters);
 
   const [items, total] = await Promise.all([
     prisma.product.findMany({

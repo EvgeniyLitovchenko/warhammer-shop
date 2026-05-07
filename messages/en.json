@@ -83,6 +83,23 @@
       "price_asc": "Price: low to high",
       "price_desc": "Price: high to low",
       "name_asc": "Name (A–Z)"
+    },
+    "filters": {
+      "system": "Game",
+      "faction": "Faction",
+      "category": "Category",
+      "price": "Price, ₴",
+      "availability": "Availability",
+      "any": "Any",
+      "inStock": "In stock only",
+      "from": "From",
+      "to": "To",
+      "reset": "Reset filters",
+      "emptyFactions": "No factions for this game yet",
+      "systems": {
+        "WARHAMMER_40K": "Warhammer 40,000",
+        "AGE_OF_SIGMAR": "Age of Sigmar"
+      }
     }
   },
   "common": {
