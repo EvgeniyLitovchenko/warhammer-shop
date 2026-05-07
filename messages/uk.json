@@ -83,6 +83,23 @@
       "price_asc": "Спочатку дешевші",
       "price_desc": "Спочатку дорожчі",
       "name_asc": "За назвою (А–Я)"
+    },
+    "filters": {
+      "system": "Гра",
+      "faction": "Фракція",
+      "category": "Категорія",
+      "price": "Ціна, ₴",
+      "availability": "Наявність",
+      "any": "Будь-яка",
+      "inStock": "Тільки в наявності",
+      "from": "Від",
+      "to": "До",
+      "reset": "Скинути фільтри",
+      "emptyFactions": "Для цієї гри фракцій ще немає",
+      "systems": {
+        "WARHAMMER_40K": "Warhammer 40,000",
+        "AGE_OF_SIGMAR": "Age of Sigmar"
+      }
     }
   },
   "common": {

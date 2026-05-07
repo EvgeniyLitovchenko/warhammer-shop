@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { CatalogFilters } from '@/components/catalog-filters';
 import { ProductCard } from '@/components/product-card';
 import { Pagination } from '@/components/pagination';
 import { SortSelect } from '@/components/sort-select';
 import { type Locale } from '@/i18n/routing';
+import { buildCatalogUrl, parseFilters } from '@/lib/filters';
 import { parsePage, parseSort, totalPages } from '@/lib/pagination';
 import { listProducts } from '@/server/queries/products';
 
@@ -30,21 +32,17 @@ export default async function CatalogPage({
 
   const page = parsePage(typeof sp.page === 'string' ? sp.page : undefined);
   const sort = parseSort(typeof sp.sort === 'string' ? sp.sort : undefined);
+  const filters = parseFilters(sp);
 
-  const { items, total, pageSize } = await listProducts({ page, sort });
+  const { items, total, pageSize } = await listProducts({ page, sort, filters });
   const pages = totalPages(total, pageSize);
   const t = await getTranslations('catalog');
+  const lang = locale as Locale;
 
-  const buildHref = (p: number) => {
-    const params = new URLSearchParams();
-    if (sort !== 'newest') params.set('sort', sort);
-    if (p > 1) params.set('page', String(p));
-    const qs = params.toString();
-    return qs ? `/catalog?${qs}` : '/catalog';
-  };
+  const buildHref = (p: number) => buildCatalogUrl({ filters, sort, page: p });
 
   return (
-    <main className="mx-auto min-h-[calc(100vh-4rem)] max-w-6xl px-6 py-12">
+    <main className="mx-auto min-h-[calc(100vh-4rem)] max-w-7xl px-6 py-12">
       <header className="flex flex-col gap-6 border-b border-bone/10 pb-8 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.4em] text-gold/80">{t('eyebrow')}</p>
@@ -56,19 +54,25 @@ export default async function CatalogPage({
         <SortSelect value={sort} />
       </header>
 
-      {items.length === 0 ? (
-        <p className="py-24 text-center text-bone/60">{t('empty')}</p>
-      ) : (
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {items.map((product) => (
-            <li key={product.id}>
-              <ProductCard product={product} locale={locale as Locale} />
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="mt-10 grid gap-10 lg:grid-cols-[260px_1fr]">
+        <CatalogFilters current={filters} locale={lang} />
 
-      <Pagination page={page} totalPages={pages} buildHref={buildHref} />
+        <section>
+          {items.length === 0 ? (
+            <p className="py-24 text-center text-bone/60">{t('empty')}</p>
+          ) : (
+            <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              {items.map((product) => (
+                <li key={product.id}>
+                  <ProductCard product={product} locale={lang} />
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <Pagination page={page} totalPages={pages} buildHref={buildHref} />
+        </section>
+      </div>
     </main>
   );
 }
