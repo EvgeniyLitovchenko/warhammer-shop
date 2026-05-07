@@ -3,6 +3,7 @@ import { Cinzel, Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { Header } from '@/components/header';
 import { routing, type Locale } from '@/i18n/routing';
 import '../globals.css';
 
@@ -48,7 +49,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${display.variable} ${body.variable}`}>
       <body className="bg-ash text-bone font-body antialiased">
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

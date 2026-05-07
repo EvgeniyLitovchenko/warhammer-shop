@@ -15,6 +15,42 @@
     "signIn": "Sign in",
     "signOut": "Sign out"
   },
+  "auth": {
+    "loginTitle": "Sign in",
+    "loginSubtitle": "Sign in to see your orders and wishlist",
+    "registerTitle": "Create account",
+    "registerSubtitle": "Create an account to place orders and save favorites",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…",
+    "createAccount": "Create account",
+    "creating": "Creating…",
+    "noAccount": "No account?",
+    "haveAccount": "Already have an account?",
+    "errors": {
+      "invalid_credentials": "Wrong email or password",
+      "email_taken": "This email is already registered",
+      "invalid_input": "Please check the fields",
+      "unknown": "Something went wrong. Try again."
+    }
+  },
+  "account": {
+    "title": "Account",
+    "greeting": "Welcome, {name}",
+    "email": "Email",
+    "role": "Role",
+    "orders": "Orders"
+  },
+  "admin": {
+    "title": "Admin",
+    "subtitle": "Manage products, orders and users",
+    "products": "Products",
+    "orders": "Orders",
+    "users": "Users"
+  },
   "common": {
     "loading": "Loading…",
     "error": "Something went wrong",
