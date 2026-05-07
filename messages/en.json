@@ -51,6 +51,24 @@
     "orders": "Orders",
     "users": "Users"
   },
+  "product": {
+    "backToCatalog": "Back to catalog",
+    "addToCart": "Add to cart",
+    "inStock": "In stock: {n}",
+    "outOfStock": "Out of stock",
+    "sku": "SKU",
+    "category": "Category",
+    "related": "You may also like",
+    "reviews": {
+      "title": "Reviews",
+      "empty": "No reviews yet. Be the first.",
+      "count": "{n, plural, one {# review} other {# reviews}}"
+    },
+    "notFound": {
+      "title": "Product not found",
+      "subtitle": "It may have been archived or the link never existed."
+    }
+  },
   "catalog": {
     "eyebrow": "Battle showcase",
     "title": "Catalog",

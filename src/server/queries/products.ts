@@ -9,6 +9,16 @@ export type ProductListItem = Prisma.ProductGetPayload<{
   };
 }>;
 
+export type ProductDetail = Prisma.ProductGetPayload<{
+  include: {
+    images: true;
+    faction: true;
+    category: true;
+    inventory: true;
+    reviews: { include: { user: true } };
+  };
+}>;
+
 const orderByFor = (sort: SortKey): Prisma.ProductOrderByWithRelationInput => {
   switch (sort) {
     case 'price_asc':
@@ -46,4 +56,52 @@ export async function listProducts({
   ]);
 
   return { items, total, pageSize: PAGE_SIZE };
+}
+
+export async function getProductBySlug(slug: string): Promise<ProductDetail | null> {
+  return prisma.product.findFirst({
+    where: { slug, status: 'ACTIVE' },
+    include: {
+      images: { orderBy: { sortOrder: 'asc' } },
+      faction: true,
+      category: true,
+      inventory: true,
+      reviews: {
+        where: { approved: true },
+        orderBy: { createdAt: 'desc' },
+        include: { user: true },
+      },
+    },
+  });
+}
+
+export async function listRelatedProducts({
+  productId,
+  factionId,
+  categoryId,
+  limit = 4,
+}: {
+  productId: string;
+  factionId: string | null;
+  categoryId: string;
+  limit?: number;
+}): Promise<ProductListItem[]> {
+  const orClauses: Prisma.ProductWhereInput[] = [{ categoryId }];
+  if (factionId) orClauses.push({ factionId });
+
+  const where: Prisma.ProductWhereInput = {
+    status: 'ACTIVE',
+    id: { not: productId },
+    OR: orClauses,
+  };
+
+  return prisma.product.findMany({
+    where,
+    take: limit,
+    orderBy: { createdAt: 'desc' },
+    include: {
+      images: { orderBy: { sortOrder: 'asc' }, take: 1 },
+      faction: true,
+    },
+  });
 }
