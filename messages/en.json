@@ -51,6 +51,22 @@
     "orders": "Orders",
     "users": "Users"
   },
+  "catalog": {
+    "eyebrow": "Battle showcase",
+    "title": "Catalog",
+    "total": "{count, plural, =0 {No products} one {# product} other {# products}}",
+    "empty": "No products in this selection yet.",
+    "prev": "Prev",
+    "next": "Next",
+    "pagination": "Pagination",
+    "sort": {
+      "label": "Sort",
+      "newest": "Newest first",
+      "price_asc": "Price: low to high",
+      "price_desc": "Price: high to low",
+      "name_asc": "Name (A–Z)"
+    }
+  },
   "common": {
     "loading": "Loading…",
     "error": "Something went wrong",
