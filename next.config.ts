@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'cdn.warhammer.com' },
+      { protocol: 'https', hostname: 'placehold.co' },
     ],
   },
 };
