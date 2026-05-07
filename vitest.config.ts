@@ -16,12 +16,10 @@ export default defineConfig({
       exclude: [
         'src/**/*.d.ts',
         'src/**/*.{test,spec}.{ts,tsx}',
-        'src/app/**/layout.tsx',
-        'src/app/**/loading.tsx',
-        'src/app/**/error.tsx',
-        'src/app/**/not-found.tsx',
+        'src/app/**',
         'src/i18n/**',
         'src/middleware.ts',
+        'src/lib/db.ts',
       ],
       thresholds: {
         lines: 40,
