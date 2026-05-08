@@ -3,12 +3,22 @@ import { prisma } from '@/lib/db';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
 
+export const revalidate = 3600;
+
+async function safeFindProducts() {
+  try {
+    return await prisma.product.findMany({
+      where: { status: 'ACTIVE' },
+      select: { slug: true, updatedAt: true },
+      orderBy: { updatedAt: 'desc' },
+    });
+  } catch {
+    return [];
+  }
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const products = await prisma.product.findMany({
-    where: { status: 'ACTIVE' },
-    select: { slug: true, updatedAt: true },
-    orderBy: { updatedAt: 'desc' },
-  });
+  const products = await safeFindProducts();
 
   const now = new Date();
 
