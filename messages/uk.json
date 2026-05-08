@@ -177,6 +177,15 @@
       "orders": "Замовлення",
       "reviews": "Відгуки"
     },
+    "notifications": {
+      "live": "Live",
+      "offline": "Офлайн",
+      "connected": "Зʼєднано з потоком",
+      "disconnected": "Звʼязок втрачено",
+      "newOrder": "Нове замовлення",
+      "items": "{n, plural, one {# позиція} few {# позиції} other {# позицій}}",
+      "dismiss": "Сховати"
+    },
     "products": {
       "title": "Товари",
       "subtitle": "{n, plural, =0 {немає товарів} one {# товар} few {# товари} other {# товарів}}",

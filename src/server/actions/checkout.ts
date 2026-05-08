@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { auth } from '@/auth';
 import { prisma } from '@/lib/db';
+import { emitAdminEvent } from '@/lib/event-bus';
 import { generateOrderNumber } from '@/lib/order-number';
 import { shippingCostUah } from '@/lib/shipping';
 import { getStripe, isStripeConfigured } from '@/lib/stripe';
@@ -112,6 +113,16 @@ export async function placeOrderAction(
     });
 
     createdId = order.id;
+
+    emitAdminEvent({
+      type: 'order.created',
+      orderId: order.id,
+      orderNumber: order.number,
+      customerEmail: session.user.email ?? 'unknown',
+      totalUah: order.totalUah,
+      itemsCount: cart.items.length,
+      createdAt: order.createdAt.toISOString(),
+    });
   } catch {
     return { error: 'unknown' };
   }
