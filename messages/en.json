@@ -55,6 +55,81 @@
       "browseCatalog": "Browse catalog"
     }
   },
+  "checkout": {
+    "eyebrow": "Finishing",
+    "title": "Place order",
+    "addressTitle": "Shipping address",
+    "addressSubtitle": "Where to deliver",
+    "noAddresses": "You don't have any saved addresses yet.",
+    "addAddress": "Add new address",
+    "shippingTitle": "Shipping method",
+    "paymentTitle": "Payment method",
+    "summary": "Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "free": "Free",
+    "placeOrder": "Place order",
+    "placing": "Placing…",
+    "viewProduct": "Open",
+    "shippingMethod": {
+      "NOVA_POSHTA": "Nova Poshta (branch)",
+      "PICKUP": "Store pickup"
+    },
+    "paymentMethod": {
+      "CASH_ON_DELIVERY": "Cash on delivery",
+      "CARD_ON_DELIVERY": "Card on delivery"
+    },
+    "errors": {
+      "unauthorized": "Sign in required",
+      "invalid_input": "Please check the form",
+      "invalid_address": "Address is invalid",
+      "empty_cart": "Cart is empty",
+      "out_of_stock": "Some items are out of stock.",
+      "unknown": "Something went wrong. Try again."
+    },
+    "success": {
+      "title": "Order placed",
+      "subtitle": "Order number: {number}",
+      "summary": "Details",
+      "total": "Total",
+      "items": "Items",
+      "viewOrder": "View order",
+      "continueShopping": "Continue shopping"
+    }
+  },
+  "orders": {
+    "title": "Orders",
+    "subtitle": "Your order history",
+    "empty": "No orders yet.",
+    "browseCatalog": "Browse catalog",
+    "backToOrders": "Back to list",
+    "itemsCount": "{n, plural, one {# item} other {# items}}",
+    "shippingTo": "Shipping to",
+    "totals": "Totals",
+    "subtotal": "Items",
+    "shipping": "Shipping",
+    "total": "Total",
+    "free": "Free",
+    "history": "Status history",
+    "status": {
+      "PENDING": "Pending",
+      "PAID": "Paid",
+      "PROCESSING": "Processing",
+      "SHIPPED": "Shipped",
+      "DELIVERED": "Delivered",
+      "CANCELLED": "Cancelled",
+      "REFUNDED": "Refunded"
+    },
+    "shippingMethod": {
+      "NOVA_POSHTA": "Nova Poshta",
+      "PICKUP": "Pickup"
+    },
+    "paymentMethod": {
+      "CASH_ON_DELIVERY": "Cash on delivery",
+      "CARD_ON_DELIVERY": "Card on delivery"
+    }
+  },
   "addresses": {
     "title": "Shipping addresses",
     "subtitle": "Where to send your orders",
