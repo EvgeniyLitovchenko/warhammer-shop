@@ -42,7 +42,49 @@
     "greeting": "Welcome, {name}",
     "email": "Email",
     "role": "Role",
-    "orders": "Orders"
+    "ordersLabel": "Orders",
+    "nav": {
+      "profile": "Profile",
+      "addresses": "Addresses",
+      "orders": "Orders"
+    },
+    "orders": {
+      "title": "Orders",
+      "subtitle": "History of your orders",
+      "empty": "No orders yet.",
+      "browseCatalog": "Browse catalog"
+    }
+  },
+  "addresses": {
+    "title": "Shipping addresses",
+    "subtitle": "Where to send your orders",
+    "addNew": "Add address",
+    "newTitle": "New address",
+    "newSubtitle": "Fill in shipping details",
+    "editTitle": "Edit address",
+    "editSubtitle": "Update shipping details",
+    "empty": "No saved addresses yet.",
+    "fullName": "Full name",
+    "phone": "Phone",
+    "country": "Country (2 letters)",
+    "region": "Region",
+    "city": "City",
+    "postalCode": "Postal code",
+    "street": "Street, building, apartment",
+    "setDefault": "Make this the default address",
+    "default": "Default",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "makeDefault": "Make default",
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "confirmDelete": "Delete this address?",
+    "errors": {
+      "unauthorized": "Sign in required",
+      "unknown": "Could not save. Try again."
+    }
   },
   "admin": {
     "title": "Admin",
