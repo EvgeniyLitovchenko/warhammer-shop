@@ -170,7 +170,61 @@
     "subtitle": "Manage products, orders and users",
     "products": "Products",
     "orders": "Orders",
-    "users": "Users"
+    "users": "Users",
+    "nav": {
+      "dashboard": "Dashboard",
+      "products": "Products",
+      "orders": "Orders"
+    },
+    "products": {
+      "title": "Products",
+      "subtitle": "{n, plural, =0 {no products} one {# product} other {# products}}",
+      "addNew": "Add product",
+      "newTitle": "New product",
+      "newSubtitle": "Fill in product details",
+      "editTitle": "Edit product",
+      "empty": "No products in the catalog yet.",
+      "name": "Name",
+      "nameEn": "Name (EN)",
+      "sku": "SKU",
+      "slug": "Slug",
+      "description": "Description",
+      "descriptionEn": "Description (EN)",
+      "price": "Price, ₴",
+      "priceHint": "Whole hryvnias. E.g., 1850",
+      "comparePrice": "Compare-at price, ₴",
+      "comparePriceHint": "Strike-through price, optional",
+      "stock": "Stock",
+      "category": "Category",
+      "faction": "Faction",
+      "imageUrls": "Image URLs (one per line)",
+      "imageHint": "Up to 10. One URL per line.",
+      "statusCol": "Status",
+      "orders": "Orders",
+      "edit": "Edit",
+      "activate": "Activate",
+      "archive": "Archive",
+      "draft": "Draft",
+      "save": "Save",
+      "saving": "Saving…",
+      "cancel": "Cancel",
+      "sectionBasic": "Basic",
+      "sectionPricing": "Price & stock",
+      "sectionTaxonomy": "Classification",
+      "sectionImages": "Images",
+      "sectionStatus": "Visibility",
+      "status": {
+        "DRAFT": "Draft",
+        "ACTIVE": "Active",
+        "ARCHIVED": "Archived"
+      },
+      "errors": {
+        "unauthorized": "Admin access required",
+        "slug_taken": "Slug is already in use",
+        "sku_taken": "SKU already exists",
+        "unknown": "Could not save. Try again."
+      }
+    }
   },
   "product": {
     "backToCatalog": "Back to catalog",
