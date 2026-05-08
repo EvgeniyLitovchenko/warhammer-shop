@@ -38,9 +38,9 @@ describe('checkoutSchema', () => {
     ).toBe(true);
   });
 
-  it('accepts STRIPE as payment method', () => {
+  it('rejects STRIPE since online payment was removed', () => {
     expect(
-      checkoutSchema.safeParse({ ...valid, paymentMethod: 'STRIPE' }).success,
-    ).toBe(true);
+      checkoutSchema.safeParse({ ...valid, paymentMethod: 'STRIPE' as never }).success,
+    ).toBe(false);
   });
 });
