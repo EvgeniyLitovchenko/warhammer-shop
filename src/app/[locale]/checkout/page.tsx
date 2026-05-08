@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { auth } from '@/auth';
 import { CheckoutForm } from '@/components/checkout-form';
 import { type Locale } from '@/i18n/routing';
+import { isStripeConfigured } from '@/lib/stripe';
 import { listUserAddresses } from '@/server/queries/addresses';
 import { getCartView } from '@/server/queries/cart';
 
@@ -45,7 +46,12 @@ export default async function CheckoutPage({
       </header>
 
       <div className="mt-10">
-        <CheckoutForm cart={cart} addresses={addresses} locale={lang} />
+        <CheckoutForm
+          cart={cart}
+          addresses={addresses}
+          locale={lang}
+          stripeEnabled={isStripeConfigured()}
+        />
       </div>
     </main>
   );

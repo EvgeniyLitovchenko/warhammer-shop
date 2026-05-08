@@ -37,4 +37,10 @@ describe('checkoutSchema', () => {
       }).success,
     ).toBe(true);
   });
+
+  it('accepts STRIPE as payment method', () => {
+    expect(
+      checkoutSchema.safeParse({ ...valid, paymentMethod: 'STRIPE' }).success,
+    ).toBe(true);
+  });
 });
