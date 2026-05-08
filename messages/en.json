@@ -174,7 +174,8 @@
     "nav": {
       "dashboard": "Dashboard",
       "products": "Products",
-      "orders": "Orders"
+      "orders": "Orders",
+      "reviews": "Reviews"
     },
     "products": {
       "title": "Products",
@@ -223,6 +224,23 @@
         "slug_taken": "Slug is already in use",
         "sku_taken": "SKU already exists",
         "unknown": "Could not save. Try again."
+      }
+    },
+    "reviews": {
+      "title": "Reviews",
+      "count": "{n, plural, =0 {no reviews} one {# review} other {# reviews}}",
+      "empty": "No reviews match this filter.",
+      "approved": "Published",
+      "pending": "Pending",
+      "approve": "Publish",
+      "delete": "Delete",
+      "confirmDelete": "Delete this review permanently?",
+      "product": "Product",
+      "author": "Author",
+      "filter": {
+        "pending": "Pending",
+        "approved": "Published",
+        "all": "All"
       }
     },
     "orders": {
@@ -279,6 +297,28 @@
       "title": "Reviews",
       "empty": "No reviews yet. Be the first.",
       "count": "{n, plural, one {# review} other {# reviews}}"
+    },
+    "reviewForm": {
+      "createTitle": "Leave a review",
+      "editTitle": "Update your review",
+      "pending": "Awaiting moderation",
+      "rating": "Rating",
+      "titleField": "Title (optional)",
+      "body": "Your experience",
+      "submit": "Submit",
+      "update": "Update",
+      "sending": "Sending…",
+      "saved": "Saved. Your review is awaiting moderation.",
+      "signInToReview": "Sign in to leave a review",
+      "errors": {
+        "rating": "Pick a rating between 1 and 5",
+        "title": "Title is too long",
+        "body": "Describe your experience (10–2000 chars)",
+        "unauthorized": "Sign in required",
+        "cannot_review": "Reviews are available after purchase",
+        "product_not_found": "Product not found",
+        "unknown": "Could not submit. Try again."
+      }
     },
     "notFound": {
       "title": "Product not found",
