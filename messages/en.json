@@ -224,6 +224,38 @@
         "sku_taken": "SKU already exists",
         "unknown": "Could not save. Try again."
       }
+    },
+    "orders": {
+      "title": "Orders",
+      "count": "{n, plural, =0 {no orders} one {# order} other {# orders}}",
+      "all": "All",
+      "empty": "No orders match this filter.",
+      "number": "Number",
+      "date": "Date",
+      "customer": "Customer",
+      "items": "Items",
+      "total": "Total",
+      "statusCol": "Status",
+      "backToList": "Back to list",
+      "changeStatus": "Change status",
+      "newStatus": "New status",
+      "commentLabel": "Comment (optional)",
+      "commentPlaceholder": "Visible to the customer in their order history",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Saved ✓",
+      "errors": {
+        "unauthorized": "Admin access required",
+        "invalid_input": "Please check the fields",
+        "not_found": "Order not found",
+        "unknown": "Could not save"
+      },
+      "audit": {
+        "title": "Audit log",
+        "empty": "No entries yet.",
+        "by": "By",
+        "system": "System"
+      }
     }
   },
   "product": {
