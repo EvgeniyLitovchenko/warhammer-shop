@@ -40,5 +40,7 @@ export default auth((req) => {
 });
 
 export const config = {
-  matcher: ['/((?!api|trpc|_next|_vercel|.*\\..*).*)'],
+  matcher: [
+    '/((?!api|trpc|_next|_vercel|icon|opengraph-image|robots\\.txt|sitemap\\.xml|.*\\..*).*)',
+  ],
 };

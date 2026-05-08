@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'cdn.warhammer.com' },
       { protocol: 'https', hostname: 'placehold.co' },
     ],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 };
 

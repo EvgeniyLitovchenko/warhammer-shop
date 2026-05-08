@@ -15,6 +15,25 @@
     "signIn": "Sign in",
     "signOut": "Sign out"
   },
+  "factions": {
+    "eyebrow": "Armies",
+    "title": "Factions",
+    "subtitle": "Each faction is its own story, aesthetic and play style. Pick your side in the Great Crusade or in the Realms of Sigmar."
+  },
+  "about": {
+    "eyebrow": "About the shop",
+    "title": "About us",
+    "paragraph1": "Warhammer Shop is a Ukrainian store for tabletop miniature fans. Running since 2024: we curate the best Citadel Miniatures kits and paints for beginners and veterans.",
+    "paragraph2": "You will find Combat Patrol starter sets, full Battleforces, individual squads, codexes, battletomes and everything you need to assemble and paint your army.",
+    "paragraph3": "We love what we do: we run our own armies, play in tournaments, test new codexes and only recommend things we buy ourselves. Got a question — reach out, we will help you build a list or your first army.",
+    "shippingTitle": "Shipping",
+    "shippingText": "Nova Poshta nationwide in Ukraine. Self-pickup from the Kyiv store.",
+    "paymentTitle": "Payment",
+    "paymentText": "Cash or card on delivery. Bank transfer for rare items.",
+    "returnsTitle": "Returns",
+    "returnsText": "14 days to return unopened kits. Defective models replaced without questions.",
+    "cta": "Browse catalog"
+  },
   "auth": {
     "loginTitle": "Sign in",
     "loginSubtitle": "Sign in to see your orders and wishlist",
