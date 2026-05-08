@@ -55,6 +55,81 @@
       "browseCatalog": "До каталогу"
     }
   },
+  "checkout": {
+    "eyebrow": "Завершення",
+    "title": "Оформлення замовлення",
+    "addressTitle": "Адреса доставки",
+    "addressSubtitle": "Куди доставити замовлення",
+    "noAddresses": "У вас ще немає збережених адрес.",
+    "addAddress": "Додати нову адресу",
+    "shippingTitle": "Спосіб доставки",
+    "paymentTitle": "Спосіб оплати",
+    "summary": "Підсумок",
+    "subtotal": "Сума товарів",
+    "shipping": "Доставка",
+    "total": "Разом",
+    "free": "Безкоштовно",
+    "placeOrder": "Підтвердити замовлення",
+    "placing": "Оформлюємо…",
+    "viewProduct": "Перейти",
+    "shippingMethod": {
+      "NOVA_POSHTA": "Нова Пошта (відділення)",
+      "PICKUP": "Самовивіз з магазину"
+    },
+    "paymentMethod": {
+      "CASH_ON_DELIVERY": "Готівка при отриманні",
+      "CARD_ON_DELIVERY": "Карткою при отриманні"
+    },
+    "errors": {
+      "unauthorized": "Потрібен вхід",
+      "invalid_input": "Перевірте поля форми",
+      "invalid_address": "Адреса недійсна",
+      "empty_cart": "Кошик порожній",
+      "out_of_stock": "Деяких товарів забракло на складі.",
+      "unknown": "Сталася помилка. Спробуйте ще раз."
+    },
+    "success": {
+      "title": "Замовлення прийняте",
+      "subtitle": "Номер замовлення: {number}",
+      "summary": "Деталі",
+      "total": "Сума",
+      "items": "Позицій",
+      "viewOrder": "Переглянути замовлення",
+      "continueShopping": "Продовжити покупки"
+    }
+  },
+  "orders": {
+    "title": "Замовлення",
+    "subtitle": "Історія ваших замовлень",
+    "empty": "Поки що жодного замовлення.",
+    "browseCatalog": "До каталогу",
+    "backToOrders": "До списку",
+    "itemsCount": "{n, plural, one {# позиція} few {# позиції} other {# позицій}}",
+    "shippingTo": "Доставка",
+    "totals": "Підсумок",
+    "subtotal": "Товари",
+    "shipping": "Доставка",
+    "total": "Разом",
+    "free": "Безкоштовно",
+    "history": "Історія статусів",
+    "status": {
+      "PENDING": "Очікує",
+      "PAID": "Оплачено",
+      "PROCESSING": "В обробці",
+      "SHIPPED": "Відправлено",
+      "DELIVERED": "Доставлено",
+      "CANCELLED": "Скасовано",
+      "REFUNDED": "Повернуто"
+    },
+    "shippingMethod": {
+      "NOVA_POSHTA": "Нова Пошта",
+      "PICKUP": "Самовивіз"
+    },
+    "paymentMethod": {
+      "CASH_ON_DELIVERY": "Готівка при отриманні",
+      "CARD_ON_DELIVERY": "Карткою при отриманні"
+    }
+  },
   "addresses": {
     "title": "Адреси доставки",
     "subtitle": "Куди надсилати ваші замовлення",
