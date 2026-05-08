@@ -7,7 +7,6 @@ import { prisma } from '@/lib/db';
 import { emitAdminEvent } from '@/lib/event-bus';
 import { generateOrderNumber } from '@/lib/order-number';
 import { shippingCostUah } from '@/lib/shipping';
-import { getStripe, isStripeConfigured } from '@/lib/stripe';
 import { checkoutSchema } from '@/lib/validation/checkout';
 
 export type PlaceOrderState = {
@@ -17,7 +16,6 @@ export type PlaceOrderState = {
     | 'invalid_address'
     | 'empty_cart'
     | 'out_of_stock'
-    | 'stripe_not_configured'
     | 'unknown';
   outOfStockSlug?: string;
 };
@@ -36,10 +34,6 @@ export async function placeOrderAction(
   });
 
   if (!parsed.success) return { error: 'invalid_input' };
-
-  if (parsed.data.paymentMethod === 'STRIPE' && !isStripeConfigured()) {
-    return { error: 'stripe_not_configured' };
-  }
 
   const address = await prisma.address.findFirst({
     where: { id: parsed.data.addressId, userId: session.user.id },
@@ -129,50 +123,5 @@ export async function placeOrderAction(
 
   revalidatePath('/account/orders');
   revalidatePath('/', 'layout');
-
-  if (parsed.data.paymentMethod === 'STRIPE') {
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
-    const stripe = getStripe();
-
-    const lineItems: Array<{
-      price_data: {
-        currency: string;
-        unit_amount: number;
-        product_data: { name: string; images?: string[] };
-      };
-      quantity: number;
-    }> = cart.items.map((item) => ({
-      price_data: {
-        currency: 'uah',
-        unit_amount: item.product.priceUah,
-        product_data: { name: item.product.name },
-      },
-      quantity: item.quantity,
-    }));
-
-    if (shippingUah > 0) {
-      lineItems.push({
-        price_data: {
-          currency: 'uah',
-          unit_amount: shippingUah,
-          product_data: { name: 'Доставка' },
-        },
-        quantity: 1,
-      });
-    }
-
-    const stripeSession = await stripe.checkout.sessions.create({
-      mode: 'payment',
-      line_items: lineItems,
-      customer_email: session.user.email ?? undefined,
-      metadata: { orderId: createdId, orderNumber: number },
-      success_url: `${appUrl}/checkout/success/${createdId}`,
-      cancel_url: `${appUrl}/account/orders/${createdId}`,
-    });
-
-    if (!stripeSession.url) return { error: 'unknown' };
-    redirect(stripeSession.url);
-  }
-
   redirect(`/checkout/success/${createdId}`);
 }
