@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { AddToCartButton } from '@/components/add-to-cart-button';
 import { Reviews } from '@/components/reviews';
 import { RelatedProducts } from '@/components/related-products';
 import { ProductGallery } from '@/components/product-gallery';
@@ -106,13 +107,7 @@ export default async function ProductPage({
             {stock > 0 ? t('inStock', { n: stock }) : t('outOfStock')}
           </p>
 
-          <button
-            type="button"
-            disabled={stock === 0}
-            className="mt-2 self-start rounded-sm bg-blood px-8 py-3 font-display text-sm uppercase tracking-widest text-bone transition hover:bg-blood/80 disabled:opacity-40"
-          >
-            {t('addToCart')}
-          </button>
+          <AddToCartButton productId={product.id} disabled={stock === 0} />
 
           <p className="mt-2 leading-relaxed text-bone/80">{description}</p>
 

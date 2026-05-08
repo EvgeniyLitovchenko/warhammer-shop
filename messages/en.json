@@ -54,11 +54,20 @@
   "product": {
     "backToCatalog": "Back to catalog",
     "addToCart": "Add to cart",
+    "adding": "Adding…",
+    "addedToCart": "Added ✓",
     "inStock": "In stock: {n}",
     "outOfStock": "Out of stock",
     "sku": "SKU",
     "category": "Category",
     "related": "You may also like",
+    "cartErrors": {
+      "product_not_found": "Product not found",
+      "out_of_stock": "Out of stock",
+      "invalid_quantity": "Invalid quantity",
+      "no_cart": "Could not create cart",
+      "unknown": "Something went wrong. Try again."
+    },
     "reviews": {
       "title": "Reviews",
       "empty": "No reviews yet. Be the first.",
@@ -101,6 +110,23 @@
         "AGE_OF_SIGMAR": "Age of Sigmar"
       }
     }
+  },
+  "cart": {
+    "eyebrow": "Your loadout",
+    "title": "Cart",
+    "count": "{n, plural, =0 {nothing selected} one {# item} other {# items}}",
+    "summary": "Summary",
+    "items": "Items",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "atCheckout": "At next step",
+    "total": "Total",
+    "checkout": "Continue to checkout",
+    "remove": "Remove",
+    "inStock": "{n} in stock",
+    "emptyTitle": "Your cart is empty",
+    "emptySubtitle": "You haven't added anything yet. Time to find your first army.",
+    "browseCatalog": "Browse catalog"
   },
   "search": {
     "eyebrow": "Find",

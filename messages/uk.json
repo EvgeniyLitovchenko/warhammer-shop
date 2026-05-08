@@ -54,11 +54,20 @@
   "product": {
     "backToCatalog": "До каталогу",
     "addToCart": "У кошик",
+    "adding": "Додаємо…",
+    "addedToCart": "Додано ✓",
     "inStock": "В наявності: {n}",
     "outOfStock": "Немає в наявності",
     "sku": "Артикул",
     "category": "Категорія",
     "related": "Може зацікавити",
+    "cartErrors": {
+      "product_not_found": "Товар не знайдено",
+      "out_of_stock": "Товар закінчився",
+      "invalid_quantity": "Невірна кількість",
+      "no_cart": "Не вдалося створити кошик",
+      "unknown": "Сталася помилка. Спробуйте ще раз."
+    },
     "reviews": {
       "title": "Відгуки",
       "empty": "Поки що немає жодного відгуку. Будь першим.",
@@ -101,6 +110,23 @@
         "AGE_OF_SIGMAR": "Age of Sigmar"
       }
     }
+  },
+  "cart": {
+    "eyebrow": "Ваш набір",
+    "title": "Кошик",
+    "count": "{n, plural, =0 {нічого не вибрано} one {# позиція} few {# позиції} other {# позицій}}",
+    "summary": "Підсумок",
+    "items": "Позицій",
+    "subtotal": "Сума",
+    "shipping": "Доставка",
+    "atCheckout": "На наступному кроці",
+    "total": "Разом",
+    "checkout": "Оформити замовлення",
+    "remove": "Прибрати",
+    "inStock": "{n} на складі",
+    "emptyTitle": "Кошик порожній",
+    "emptySubtitle": "Поки що ви нічого не додали. Час шукати свою першу армію.",
+    "browseCatalog": "Перейти до каталогу"
   },
   "search": {
     "eyebrow": "Знайти",
