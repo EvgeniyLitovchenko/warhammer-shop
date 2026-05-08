@@ -32,7 +32,7 @@ export default async function AccountPage({
           <p className="mt-2 text-lg">{session?.user?.role}</p>
         </div>
         <div className="rounded-sm border border-bone/10 bg-ash/40 p-6">
-          <p className="text-xs uppercase tracking-widest text-bone/50">{t('orders')}</p>
+          <p className="text-xs uppercase tracking-widest text-bone/50">{t('ordersLabel')}</p>
           <p className="mt-2 text-lg">0</p>
         </div>
       </section>
