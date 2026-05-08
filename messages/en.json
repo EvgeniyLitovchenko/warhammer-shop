@@ -78,14 +78,17 @@
     },
     "paymentMethod": {
       "CASH_ON_DELIVERY": "Cash on delivery",
-      "CARD_ON_DELIVERY": "Card on delivery"
+      "CARD_ON_DELIVERY": "Card on delivery",
+      "STRIPE": "Card online"
     },
+    "online": "Online",
     "errors": {
       "unauthorized": "Sign in required",
       "invalid_input": "Please check the form",
       "invalid_address": "Address is invalid",
       "empty_cart": "Cart is empty",
       "out_of_stock": "Some items are out of stock.",
+      "stripe_not_configured": "Online payment is temporarily unavailable.",
       "unknown": "Something went wrong. Try again."
     },
     "success": {
@@ -127,7 +130,8 @@
     },
     "paymentMethod": {
       "CASH_ON_DELIVERY": "Cash on delivery",
-      "CARD_ON_DELIVERY": "Card on delivery"
+      "CARD_ON_DELIVERY": "Card on delivery",
+      "STRIPE": "Card online"
     }
   },
   "addresses": {

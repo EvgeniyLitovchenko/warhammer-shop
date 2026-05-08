@@ -78,14 +78,17 @@
     },
     "paymentMethod": {
       "CASH_ON_DELIVERY": "Готівка при отриманні",
-      "CARD_ON_DELIVERY": "Карткою при отриманні"
+      "CARD_ON_DELIVERY": "Карткою при отриманні",
+      "STRIPE": "Карткою онлайн"
     },
+    "online": "Онлайн",
     "errors": {
       "unauthorized": "Потрібен вхід",
       "invalid_input": "Перевірте поля форми",
       "invalid_address": "Адреса недійсна",
       "empty_cart": "Кошик порожній",
       "out_of_stock": "Деяких товарів забракло на складі.",
+      "stripe_not_configured": "Онлайн-оплата тимчасово недоступна.",
       "unknown": "Сталася помилка. Спробуйте ще раз."
     },
     "success": {
@@ -127,7 +130,8 @@
     },
     "paymentMethod": {
       "CASH_ON_DELIVERY": "Готівка при отриманні",
-      "CARD_ON_DELIVERY": "Карткою при отриманні"
+      "CARD_ON_DELIVERY": "Карткою при отриманні",
+      "STRIPE": "Карткою онлайн"
     }
   },
   "addresses": {

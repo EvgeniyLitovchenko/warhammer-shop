@@ -1,6 +1,6 @@
 'use client';
 
-import type { Address, ShippingMethod } from '@prisma/client';
+import type { Address, PaymentMethod, ShippingMethod } from '@prisma/client';
 import { useTranslations } from 'next-intl';
 import { useActionState, useState } from 'react';
 import { Link, type Locale } from '@/i18n/routing';
@@ -13,16 +13,18 @@ import {
 import type { CartWithItems } from '@/server/queries/cart';
 
 const SHIPPING_METHODS: ShippingMethod[] = ['NOVA_POSHTA', 'PICKUP'];
-const PAYMENT_METHODS = ['CASH_ON_DELIVERY', 'CARD_ON_DELIVERY'] as const;
+const OFFLINE_PAYMENT_METHODS: PaymentMethod[] = ['CASH_ON_DELIVERY', 'CARD_ON_DELIVERY'];
 
 export function CheckoutForm({
   cart,
   addresses,
   locale,
+  stripeEnabled,
 }: {
   cart: CartWithItems;
   addresses: Address[];
   locale: Locale;
+  stripeEnabled: boolean;
 }) {
   const t = useTranslations('checkout');
   const defaultAddress = addresses.find((a) => a.isDefault) ?? addresses[0];
@@ -122,7 +124,25 @@ export function CheckoutForm({
 
         <Section title={t('paymentTitle')}>
           <div className="flex flex-col gap-3">
-            {PAYMENT_METHODS.map((method, idx) => (
+            {stripeEnabled && (
+              <label className="flex cursor-pointer items-center justify-between gap-3 rounded-sm border border-bone/10 bg-ash/40 px-4 py-3 transition hover:border-bone/30 has-[:checked]:border-gold/60">
+                <span className="flex items-center gap-3">
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="STRIPE"
+                    defaultChecked
+                    required
+                    className="accent-gold"
+                  />
+                  <span className="text-sm">{t('paymentMethod.STRIPE')}</span>
+                </span>
+                <span className="text-[10px] uppercase tracking-widest text-gold/70">
+                  {t('online')}
+                </span>
+              </label>
+            )}
+            {OFFLINE_PAYMENT_METHODS.map((method, idx) => (
               <label
                 key={method}
                 className="flex cursor-pointer items-center gap-3 rounded-sm border border-bone/10 bg-ash/40 px-4 py-3 transition hover:border-bone/30 has-[:checked]:border-gold/60"
@@ -131,7 +151,7 @@ export function CheckoutForm({
                   type="radio"
                   name="paymentMethod"
                   value={method}
-                  defaultChecked={idx === 0}
+                  defaultChecked={!stripeEnabled && idx === 0}
                   required
                   className="accent-gold"
                 />
