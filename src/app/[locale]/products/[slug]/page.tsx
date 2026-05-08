@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { auth } from '@/auth';
 import { AddToCartButton } from '@/components/add-to-cart-button';
 import { Reviews } from '@/components/reviews';
 import { RelatedProducts } from '@/components/related-products';
 import { ProductGallery } from '@/components/product-gallery';
+import { ReviewForm } from '@/components/review-form';
 import { StarRating } from '@/components/star-rating';
 import { Link, type Locale } from '@/i18n/routing';
 import { formatUah } from '@/lib/money';
 import { averageRating } from '@/lib/reviews';
 import { getProductBySlug, listRelatedProducts } from '@/server/queries/products';
+import { canUserReviewProduct, getUserReview } from '@/server/queries/reviews';
 
 export async function generateMetadata({
   params,
@@ -57,6 +60,14 @@ export default async function ProductPage({
     factionId: product.factionId,
     categoryId: product.categoryId,
   });
+
+  const session = await auth();
+  const canReview = session?.user
+    ? await canUserReviewProduct(session.user.id, product.id)
+    : false;
+  const userReview = session?.user
+    ? await getUserReview(session.user.id, product.id)
+    : null;
 
   return (
     <main className="mx-auto min-h-[calc(100vh-4rem)] max-w-6xl px-6 py-12">
@@ -126,6 +137,17 @@ export default async function ProductPage({
 
       <div className="mt-16 flex flex-col gap-16">
         <Reviews reviews={product.reviews} locale={lang} />
+
+        {!session?.user ? (
+          <section className="rounded-sm border border-dashed border-bone/20 bg-ash/20 p-6 text-center text-sm text-bone/60">
+            <Link href="/auth/login" className="text-gold hover:underline">
+              {t('reviewForm.signInToReview')}
+            </Link>
+          </section>
+        ) : canReview ? (
+          <ReviewForm productId={product.id} existing={userReview} />
+        ) : null}
+
         <RelatedProducts products={related} locale={lang} />
       </div>
     </main>

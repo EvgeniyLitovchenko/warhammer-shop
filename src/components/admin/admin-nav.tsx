@@ -7,6 +7,7 @@ const items = [
   { key: 'dashboard' as const, href: '/admin', exact: true },
   { key: 'products' as const, href: '/admin/products', exact: false },
   { key: 'orders' as const, href: '/admin/orders', exact: false },
+  { key: 'reviews' as const, href: '/admin/reviews', exact: false },
 ];
 
 export function AdminNav() {
