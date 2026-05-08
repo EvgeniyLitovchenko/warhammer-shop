@@ -177,6 +177,15 @@
       "orders": "Orders",
       "reviews": "Reviews"
     },
+    "notifications": {
+      "live": "Live",
+      "offline": "Offline",
+      "connected": "Connected to stream",
+      "disconnected": "Connection lost",
+      "newOrder": "New order",
+      "items": "{n, plural, one {# item} other {# items}}",
+      "dismiss": "Dismiss"
+    },
     "products": {
       "title": "Products",
       "subtitle": "{n, plural, =0 {no products} one {# product} other {# products}}",
