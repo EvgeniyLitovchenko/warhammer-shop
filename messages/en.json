@@ -415,6 +415,7 @@
     "loading": "Loading…",
     "error": "Something went wrong",
     "retry": "Try again",
-    "search": "Search"
+    "search": "Search",
+    "skipToContent": "Skip to content"
   }
 }
