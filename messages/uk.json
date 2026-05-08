@@ -186,6 +186,24 @@
       "items": "{n, plural, one {# позиція} few {# позиції} other {# позицій}}",
       "dismiss": "Сховати"
     },
+    "dashboard": {
+      "title": "Огляд",
+      "periodSubtitle": "Дані за останні {days} днів",
+      "revenue": "Виручка",
+      "orders": "Замовлення",
+      "newCustomers": "Нові покупці",
+      "avgOrder": "Середній чек",
+      "pendingHint": "{n, plural, =0 {немає в очікуванні} one {# в очікуванні} few {# в очікуванні} other {# в очікуванні}}",
+      "topProducts": "ТОП товари",
+      "units": "шт",
+      "noSales": "Поки що немає продажів.",
+      "recentOrders": "Останні замовлення",
+      "noOrders": "Поки що немає замовлень.",
+      "seeAll": "Усі",
+      "lowStock": "Залишається мало",
+      "stockLeft": "{n} на складі",
+      "outOfStock": "Закінчився"
+    },
     "products": {
       "title": "Товари",
       "subtitle": "{n, plural, =0 {немає товарів} one {# товар} few {# товари} other {# товарів}}",
