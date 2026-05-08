@@ -186,6 +186,24 @@
       "items": "{n, plural, one {# item} other {# items}}",
       "dismiss": "Dismiss"
     },
+    "dashboard": {
+      "title": "Overview",
+      "periodSubtitle": "Last {days} days",
+      "revenue": "Revenue",
+      "orders": "Orders",
+      "newCustomers": "New customers",
+      "avgOrder": "Average order",
+      "pendingHint": "{n, plural, =0 {none pending} one {# pending} other {# pending}}",
+      "topProducts": "Top products",
+      "units": "u.",
+      "noSales": "No sales yet.",
+      "recentOrders": "Recent orders",
+      "noOrders": "No orders yet.",
+      "seeAll": "All",
+      "lowStock": "Low stock",
+      "stockLeft": "{n} in stock",
+      "outOfStock": "Out of stock"
+    },
     "products": {
       "title": "Products",
       "subtitle": "{n, plural, =0 {no products} one {# product} other {# products}}",
