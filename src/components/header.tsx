@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { auth } from '@/auth';
 import { Link } from '@/i18n/routing';
+import { CartIndicator } from './cart-indicator';
 import { LocaleSwitcher } from './locale-switcher';
 import { SearchBar } from './search-bar';
 import { UserMenu } from './user-menu';
@@ -32,6 +33,7 @@ export async function Header() {
 
         <div className="ml-auto flex items-center gap-4 sm:ml-0">
           <LocaleSwitcher />
+          <CartIndicator />
           <UserMenu session={session} />
         </div>
       </div>
